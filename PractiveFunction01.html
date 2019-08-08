@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap tao va su dung ham 01</title>
+</head>
+<body>
+<script>
+    /*
+    //bai 1:
+    function alertMessage() {
+        alert("Xin chao!!!");
+    }
+    alertMessage();
+     */
+
+    /*
+    //bai 2:
+    function addition(number) {
+        return number+1;
+    }
+    let value = parseInt(prompt("nhap vao mot so bat ky: "));
+    document.write("Gia tri sau khi goi ham la: " + addition(value));
+     */
+
+    /*
+    //bai 3:
+    function comparison(a,b) {
+        if(a > b)
+        {
+            alert("Gia tri tham so thu nhat lon hon gia tri tham so thu 2!!!");
+        }
+        else
+        {
+            alert("tong cua 2 so la: " + (a + b));
+        }
+    }
+    comparison(3,3);
+     */
+
+    /*
+    //bai 4:
+    function addNumbers() {
+        let firstNum = 4;
+        let secondNum = 8;
+        let result = firstNum + secondNum;
+        return result;
+    }
+    let result = 0;
+    alert("Gia tri result truoc khi goi ham la: " + result);
+    result = addNumbers();
+    alert("Gia tri result sau khi goi ham la: " + result);
+     */
+
+    //bai 5:
+    let star = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let Constellation = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    function findIndex(str) {
+        for(let i = 0; i < star.length; i++)
+        {
+            if(star[i].toUpperCase() == str.toUpperCase())
+                return i;
+        }
+        return -1;
+    }
+
+    let str = prompt("Nhap vao ten ngoi sao: ");
+    str = str.trim();
+    let index = findIndex(str);
+    if(index == -1)
+    {
+        alert("Khong tim thay chom sao tuong ung. Xin kiem tra lai!!!");
+    }
+    else
+    {
+        alert("Chom sao tuong ung voi ngoi sao: " + str + " la: " + Constellation[index]);
+    }
+</script>
+</body>
+</html>
