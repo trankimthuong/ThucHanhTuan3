@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi giua feet va met</title>
+</head>
+<body>
+<script>
+    function ConvertFootToMeter(foot) {
+        return 0.305 * foot;
+    }
+    
+    function ConvertMeterToFoot(meter) {
+        return 3.279 * meter;
+    }
+
+    let selection = parseInt(prompt("Chon phuong thuc ban muon chuyen: " +
+        "1. foot sang meters " +
+        "2. meters sang foot"));
+    if(selection == 1)
+    {
+        let value = parseFloat(prompt("Nhap vao gia tri foot: "));
+        alert("Gia tri ban nhap vao tuong duong: " + ConvertFootToMeter(value) + " met");
+    }
+    else
+    {
+        let value = parseFloat(prompt("Nhap vao gia tri meters: "));
+        alert("Gia tri ban nhap vao tuong duong: " + ConvertMeterToFoot(value) + " foot");
+    }
+</script>
+</body>
+</html>
