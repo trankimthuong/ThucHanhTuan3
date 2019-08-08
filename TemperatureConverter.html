@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi do F sang do C</title>
+
+    <p>
+    <label>Fahreheit</label>
+    <input id="inputFahreheit" type="number" placeholder="Fahreheit"
+    oninput="temperatureConverter(this.value)"
+    onchange="temperatureConverter(this.value)">
+    </p>
+
+    <p>Celsius: <span id="outputCelsius"></span></p>
+
+    <script>
+        function temperatureConverter(temperatureF) {
+            temperatureF = parseFloat(temperatureF);
+            let temperatureC = (temperatureF - 32)/1.8;
+            document.getElementById("outputCelsius").innerHTML = temperatureC;
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
