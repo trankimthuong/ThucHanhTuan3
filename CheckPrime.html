@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra so nguyen to</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        let check = false;
+        if(number == 2 || number == 3)
+        {
+            check = true;
+            return check;
+        }
+        for(let i = 2; i <= Math.sqrt(number); i++)
+        {
+            if(number % i == 0)
+            {
+                break;
+            }
+            check = true;
+        }
+        return check;
+    }
+
+    let number = parseInt(prompt("Nhap vao mot so bat ki: "));
+    if(isPrime(number))
+    {
+        alert("Day la so nguyen to!!!");
+    }
+    else
+    {
+        alert("Day khong phai la so nguyen to!!!");
+    }
+</script>
+</body>
+</html>
