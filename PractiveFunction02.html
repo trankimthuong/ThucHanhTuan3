@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap tao va su dung ham 02</title>
+</head>
+<body>
+<script>
+    /*
+    //bai 1
+    function square(number) {
+        return number * number;
+    }
+    let num = parseInt(prompt("Nhap vao so bat ki: "));
+    alert("Binh phuong so vua nhap la: " + square(num));
+     */
+
+    /*
+    //Bai 2:
+    function acreage(num) {
+        return num * num * 3.14;
+    }
+    
+    function perimeter(num) {
+        return 2 * num * 3.14;
+    }
+
+    let num = parseInt(prompt("Nhap vao ban kinh hinh tron: "));
+    document.write("Dien tich hinh tron la: " + acreage(num));
+    document.write("<br/>Chu vi hinh tron la: " + perimeter(num));
+     */
+
+    /*
+    function factorial(num) {
+        let value = 1;
+        for(let i = num; i > 1; i--)
+        {
+            value *= i;
+        }
+        return value;
+    }
+    let num = parseInt(prompt("Nhap vao so bat ky: "));
+    alert("Giai thua cua so vua nhap la: " + factorial(num));
+     */
+
+    /*
+    //Bai 4:
+    function checkNumber(char) {
+        let str = '0123456789';
+        if(str.indexOf(char) != -1)
+            return true;
+        else
+            return false;
+    }
+    let char = prompt("Nhap vao mot ky tu bat ki: ");
+    let check = checkNumber(char);
+    if(check)
+        alert("Ky tu vua nhap la mot ky tu so!!!");
+    else
+        alert("Ky tu vua nhap khong phai la ky tu so!!!");
+     */
+
+    /*
+    //Bai 5:
+    function findMin(a, b, c) {
+        let min = a;
+        if(min > b)
+            min = b;
+        if(min > c)
+            min = c;
+        return min;
+    }
+
+    alert("min = " + findMin(-1,4,-1));
+     */
+
+    /*
+    //Bai 6:
+    function checkUnsigned(a) {
+        if(a > 0)
+            return true;
+        else
+            return false;
+    }
+
+    let num = parseInt(prompt("Nhap vao mot so bat ky: "));
+    if(checkUnsigned(num))
+    {
+        alert("So da nhap la so nguyen duong!!!");
+    }
+    else
+        alert("So da nhap khong phai la so nguyen duong!!!");
+     */
+
+    /*
+    //bai 7:
+    function conversion(a,b) {
+        let temp = a[0];
+        a[0] = b[0];
+        b[0] = temp;
+    }
+
+    let firstNum = parseInt(prompt("Nhap vao so thu nhat: "));
+    let firstNumObj = [firstNum];
+    let secondNum = parseInt(prompt("Nhap vao so thu hai: "));
+    let secondNumObj = [secondNum];
+    document.write("Truoc khi hoan vi: so thu nhat: " + firstNumObj[0] + " so thu 2: " + secondNumObj[0]);
+
+    conversion(firstNumObj, secondNumObj);
+    document.write("<br/>Sau khi hoan vi: so thu nhat: " + firstNumObj[0] + " so thu 2: " + secondNumObj[0]);
+     */
+
+    /*
+    //Bai 8:
+    function daoNguocMang(arr) {
+        for(let i = 0; i < arr.length / 2; i++)
+        {
+            let temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+    }
+
+    let arr = [1,2,3,4,5,6,7];
+    document.write("Mang truoc khi dao nguoc la: " + arr.toString());
+    daoNguocMang(arr);
+    document.write("<br/>Mang sau khi dao nguoc la: " + arr.toString());
+     */
+
+    //bai 9:
+    function isChar(str, char) {
+        let count  = 0;
+        for(let i = 0; i < str.length; i++)
+        {
+            if(str[i] == char)
+            {
+                count++;
+            }
+        }
+        if(count)
+        {
+            return count;
+        }
+        else
+            return -1;
+    }
+
+    let str = 'hello world!!';
+    let check = isChar(str, 'w');
+    if(check == -1)
+    {
+        alert("Ki tu khong nam trong mang!!!");
+    }
+    else
+        alert("Ki tu xuat hien trong mang: " + check + " lan!!!");
+
+</script>
+</body>
+</html>
