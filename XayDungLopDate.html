@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thuc hanh xay dung lop</title>
+    <script>
+        let myDate = function(day, month, year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMonth = function () {
+                return this.month;
+            }
+            this.getYear = function () {
+                return this.year;
+            }
+
+            this.setDay = function (day) {
+                this.day = day;
+            }
+            this.setMonth = function (month) {
+                this.month = month;
+            }
+            this.setYear = function (year) {
+                this.year = year;
+            }
+
+            this.setDate = function (day, month, year) {
+                this.day = day;
+                this.month = month;
+                this.year = year;
+            }
+            this.toStringA = function () {
+                let a = '';
+                if(this.day < 10)
+                    a += '0';
+                a = a + this.day +'/';
+                if(this.month < 10)
+                    a+= '0';
+                a = a + this.month +'/';
+                a += this.year;
+                return a;
+            }
+        }
+
+        let date = new myDate(2, 2, 2007);
+        let day = date.getDay();
+        let month = date.getMonth();
+        let year = date.getYear();
+        alert(day + "/" + month + "/" + year);
+
+        //date.setDay(10);
+        //date.setMonth(10);
+        //date.setYear(2019);
+        date.setDate(4,8,1995)
+        day = date.getDay();
+        month = date.getMonth();
+        year = date.getYear();
+        alert(date.toStringA());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
