@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test vui</title>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border: 1px solid #d3d3d3"></canvas>
+    <script>
+        let Circle = function (x, y, radius) {
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        };
+
+        function getRandomHex() {
+            return Math.floor(Math.random() * 255);
+        }
+
+        function getRandomColor() {
+            let red = getRandomHex();
+            let green = getRandomHex();
+            let blue = getRandomHex();
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+        function createCircle() {
+            /*
+            //tao hinh tron voi ban kinh 80px;
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let circle = new Circle(500, 500, 80);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2*Math.PI);//dung phuong thuc arc de ve 1 hinh tron
+            ctx.fill();
+             */
+
+            /*
+            //tao hinh tron voi ban kinh ngau nhien
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let radius = Math.floor(Math.random() * 80);
+            let circle = new Circle(500, 500, radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fill();
+             */
+
+            let ctx = document.getElementById("myCanvas").getContext("2d");
+            let radius = Math.floor(Math.random() * 80);
+            let color = getRandomColor();
+            var x = Math.random() * window.innerWidth;
+            var y = Math.random() * window.innerHeight;
+            let circle = new Circle(x, y, radius);
+
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+
+
+        function createMultipleCircle(){
+            for(var i = 0; i < 30; i++){
+                createCircle();
+            }
+        }
+
+
+        let toaDo_x = 500;
+        let toaDo_y = 500;
+        let banKinh = 80;
+        let count = 1;
+       function moveCircle() {
+           let ctx = document.getElementById("myCanvas").getContext("2d");
+           let circle = new Circle(toaDo_x, toaDo_y, banKinh); //toa do ban dau 500, 500px ban kinh 80
+           ctx.beginPath();
+           ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+           ctx.fill();
+
+           setTimeout(function (disPlay) {
+               ctx.clearRect(0,0,document.getElementById("myCanvas").width, document.getElementById("myCanvas").height);
+           },100);
+         if(count < 10)
+         {
+             toaDo_x +=15;
+             count += 1;
+         }
+         else {
+             toaDo_x -=15;
+             count += 1;
+             if (count == 20)
+                 count = 1;
+         }
+
+
+           console.log(count);
+       }
+
+       let hehe = setInterval(moveCircle, 110);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
