@@ -69,6 +69,8 @@
         let banKinh = 50;
         let ctx = document.getElementById("myCanvas").getContext("2d");
         let count = 1;
+        let dx = 15;
+        let dy = -15;
        function drawCircle() {
 
            ctx.beginPath();
@@ -81,8 +83,15 @@
         function draw() {
             ctx.clearRect(0, 0, document.getElementById("myCanvas").width, document.getElementById("myCanvas").height);
             drawCircle();
-            toaDo_x += 10;
-            toaDo_y -= 10;
+            if(toaDo_x + dx > document.getElementById("myCanvas").width-banKinh || toaDo_x + dx < banKinh) {
+                dx = -dx;
+            }
+            if(toaDo_y + dy > document.getElementById("myCanvas").height-banKinh || toaDo_y + dy < banKinh) {
+                dy = -dy;
+            }
+            toaDo_x += dx;
+            toaDo_y += dy;
+
         }
        let hehe = setInterval(draw, 50);
     </script>
