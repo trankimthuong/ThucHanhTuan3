@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop dien thoai</title>
+</head>
+<body>
+<script>
+    let Mobile = function (pin) {
+        this.statusPin = pin;
+        this.messageDrafting = [];
+        this.messageReceive = [];
+        this.messageSend = [];
+        this.active = true;
+        
+        this.isActive = function (check) {
+            return this.active;
+        }
+        this.setActive = function (active) {
+            this.active = active;
+        }
+
+        this.setStatusPin = function () {
+
+            if (this.statusPin >= 100) {
+                alert("pin day!!!");
+                this.statusPin = 100;
+            } else {
+            this.statusPin += 1;
+            }
+            //return this.statusPin;
+        }
+
+        this.textMessage = function (str) {
+            if (this.active) {
+                this.setStatusPin--;
+                this.messageDrafting.push(str);
+            }
+        }
+        this.receiMessage = function (str) {
+            if (this.active) {
+                this.setStatusPin--;
+                this.messageReceive.push(str);
+            }
+        }
+        this.sendMessage = function (mobile) {
+            if (this.active) {
+                this.setStatusPin--;
+                mobile.messageReceive.push(this.messageDrafting[this.messageDrafting.length-1]);
+            }
+        }
+        this.getMessageReceive = function () {
+            if (this.active) {
+                this.setStatusPin--;
+                return this.messageReceive;
+            }
+        }
+        this.getMessageSend = function () {
+            if (this.active) {
+                this.setStatusPin--;
+                return this.messageSend;
+            }
+        }
+    }
+
+    let nokia = new Mobile(85);
+    let iphone = new Mobile(60);
+    nokia.textMessage("ta là tiền bối của ngươi!!!");
+    nokia.textMessage("ta là tiền bối của ngươi 2!!!");
+    nokia.sendMessage(iphone);
+    //iphone.receiMessage(nokia.messageDrafting.join(''));
+    alert(iphone.getMessageReceive().join(''));
+
+</script>
+</body>
+</html>
