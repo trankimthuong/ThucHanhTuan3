@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop mo ta nhiet do</title>
+</head>
+<body>
+    <script>
+        let Temperature = function (nhietdo) {
+            this.nhietDoC = nhietdo;
+
+            this.convertCToF = function () {
+                return this.nhietDoC * 1.8 + 32;
+            }
+            this.convertCToK = function () {
+                return this.nhietDoC + 273.15;
+            }
+        }
+
+        let temperature = new Temperature(25);
+        alert("Do F tuong ung la: " + temperature.convertCToF() + "\nDo K tuong ung la: " + temperature.convertCToK());
+    </script>
+</body>
+</html>
