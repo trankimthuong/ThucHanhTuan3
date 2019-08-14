@@ -66,35 +66,25 @@
 
         let toaDo_x = 500;
         let toaDo_y = 500;
-        let banKinh = 80;
+        let banKinh = 50;
+        let ctx = document.getElementById("myCanvas").getContext("2d");
         let count = 1;
-       function moveCircle() {
-           let ctx = document.getElementById("myCanvas").getContext("2d");
-           let circle = new Circle(toaDo_x, toaDo_y, banKinh); //toa do ban dau 500, 500px ban kinh 80
+       function drawCircle() {
+
            ctx.beginPath();
-           ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+           ctx.arc(toaDo_x, toaDo_y, banKinh, 0, Math.PI*2);
+           ctx.fillStyle = "#0095DD";
            ctx.fill();
-
-           setTimeout(function (disPlay) {
-               ctx.clearRect(0,0,document.getElementById("myCanvas").width, document.getElementById("myCanvas").height);
-           },100);
-         if(count < 10)
-         {
-             toaDo_x +=15;
-             count += 1;
-         }
-         else {
-             toaDo_x -=15;
-             count += 1;
-             if (count == 20)
-                 count = 1;
-         }
-
-
-           console.log(count);
+           ctx.closePath();
        }
 
-       let hehe = setInterval(moveCircle, 110);
+        function draw() {
+            ctx.clearRect(0, 0, document.getElementById("myCanvas").width, document.getElementById("myCanvas").height);
+            drawCircle();
+            toaDo_x += 10;
+            toaDo_y -= 10;
+        }
+       let hehe = setInterval(draw, 50);
     </script>
 </head>
 <body>
