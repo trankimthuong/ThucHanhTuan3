@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop hinh tron!!!</title>
+</head>
+<body>
+<script>
+    let circle = function (radius) {
+        this.radius = radius;
+
+        this.getRadius = function () {
+            return this.radius;
+        }
+
+        this.getArea = function () {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let Circle = new circle(2);
+    let radius = Circle.getRadius();
+    let area = Circle.getArea();
+
+    alert("ban kinh: " + radius + '\ndien tich: ' + area);
+</script>
+</body>
+</html>
