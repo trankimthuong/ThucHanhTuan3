@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xay dung lop hinh chu nhat</title>
+    <canvas id="mycanvas" width="200" height="100" style="border: 1px solid #d3d3d3"></canvas>
+
+    <script>
+        let Rectangle = function (chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+
+            this.dienTich = function () {
+                return this.chieuRong * this.chieuDai;
+            }
+            this.chuVi = function () {
+                return (this.chieuDai + this.chieuRong) * 2;
+            }
+
+            this.drawRectangle = function () {
+                let exp = document.getElementById("mycanvas");
+                exp.width = this.chieuDai;
+                exp.height = this.chieuRong;
+            }
+
+            this.setChange = function (chieuDai, chieuRong) {
+                this.chieuDai = chieuDai;
+                this.chieuRong = chieuRong;
+            }
+        }
+
+        let rectangle = new Rectangle(400, 100);
+        rectangle.drawRectangle();
+        rectangle.setChange(1000, 500);
+        rectangle.drawRectangle();
+        alert("dien tich: " + rectangle.dienTich() + "  chu vi: " + rectangle.chuVi());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
