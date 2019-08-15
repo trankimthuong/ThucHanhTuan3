@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tu doi xung dung de quy</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str) {
+            if(str.length <= 0)
+                return true;
+            if (str[0] != str[str.length - 1]){
+                return false;
+            }
+            else{
+
+                return isPalindrome(str.slice(1,str.length - 1));
+            }
+        }
+
+        let str = 'rotor';
+
+        if(isPalindrome(str))
+            document.write("day la chuoi doi xung");
+        else
+            document.write("day khong phai la chuoi doi xung");
+
+    </script>
+</body>
+</html>
