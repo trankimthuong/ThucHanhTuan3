@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung quan ly san pham</title>
+    <h1>Add new product</h1>
+    <input type="text" id="inputProduct" value="New product" onclick="onMouseClick()"></input>
+    <button id="btnAdd" onclick="btnAddClick()">Add</button>
+    <h1>Product Name</h1>
+    <div id="display"></div>
+
+    <script>
+        let arrProducts = ['sony', 'iphone'];
+        function start(arr) {
+            let output = ''
+            for(let i = 0; i < arr.length; i++){
+                output += arr[i] + '<button onclick="editProduct('+ i +')" style="position: absolute; left: 300px">Edit</button>'
+                + '<button onclick="deleteProduct('+ i +')" style="position: absolute; left: 400px">Delete</button>' + '<br/><br/>';
+            }
+            document.getElementById("display").innerHTML = output;
+        }
+        start(arrProducts);
+        function onMouseClick() {
+            document.getElementById("inputProduct").value = '';
+        }
+
+        function btnAddClick() {
+            let str = document.getElementById("inputProduct").value;
+            arrProducts.push(str);
+            start(arrProducts);
+            alert("San pham da duoc them thanh cong!!!!");
+        }
+        
+        function editProduct(num) {
+            let newName = prompt("Nhap vao ten ban muon sua: ");
+            arrProducts[num] = newName;
+            start(arrProducts);
+            alert("ban da sua ten 1 san pham thanh cong!!!");
+        }
+
+        function deleteProduct(num) {
+            let check = confirm("ban co chac chan muon xoa san pham nay khong???");
+            if(check){
+                arrProducts.splice(num,1);
+            }
+            start(arrProducts);
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
