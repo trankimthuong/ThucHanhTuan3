@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hien thi bang cuu chuong</title>
+    <p id="display"></p>
+</head>
+<body>
+    <script>
+        let output = "<table border='1' width='800' cellspacing='0' cellpadding='3' >";
+        for(let i = 2; i < 10; i++){
+            output += '<tr>';
+            for(let j = 1; j <= 9; j++){
+                output += '<td>';
+                output += i + ' * ' + j + ' = ';
+                output += i * j;
+                output += '</td>';
+            }
+            output += '</tr>';
+        }
+        output += '</table>'
+        document.getElementById("display").innerHTML = output;
+    </script>
+</body>
+</html>
